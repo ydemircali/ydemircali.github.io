@@ -62,6 +62,16 @@ defaults:
     values:
       layout: "page"
 
+### Plugins ###
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-include-cache
+  - jemoji
 
 ### Exclude from processing ###
 exclude:
