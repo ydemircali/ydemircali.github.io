@@ -1,8 +1,8 @@
 ### Site Settings ###
 title               : Yakup Demirçalı
 description         : >-                                      # >- means to ignore newlines until "url:"
-                      Hello World! I'm Yakup Demirçalı. 
-                      I am a passionate Software Developer trying to learn more about the following technologies.
+                      Hello World! I'm Yakup Demirçalı. <br>
+                      I am a passionate Software Developer trying to learn more about the following technologies.<br>
 
                       .Net / .Net Core, ASP.NET/CORE MVC , WPF, WCF ,JavaScript, TypeScript, Angular, MS SQL, Oracle, TSQL, PLSQL, ElasticSearch, Redis, Azure DevOps, Git, TFS.
                       
