@@ -1,0 +1,15 @@
+- name: .Net Core
+  percentage: 90
+  color: danger
+
+- name: .Net
+  percentage: 80
+  color: danger
+  
+- name: JavaScript
+  percentage: 70
+  color: dark
+  
+- name: Php
+  percentage: 70
+  color: dark

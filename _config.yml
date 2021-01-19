@@ -1,1 +1,73 @@
-theme: jekyll-theme-cayman
+### Site Settings ###
+title               : Yakup Demirçalı
+description         : >-                                      # >- means to ignore newlines until "url:"
+                      Hello World! I'm Yakup Demirçalı. 
+                      I am a passionate Software Developer trying to learn more about the following technologies.
+
+                      .Net / .Net Core, ASP.NET/CORE MVC , WPF, WCF ,JavaScript, TypeScript, Angular, MS SQL, Oracle, TSQL, PLSQL, ElasticSearch, Redis, Azure DevOps, Git, TFS.
+                      
+
+url                 : ""                                      # base hostname & protocol for your site (e.g. http://example.com)
+baseurl             : ""                                      # subpath of your site (e.g. /blog) [IMPORTANT: use "" if your are hosting at https://username.github.io directly]
+repository          : ydemircali/ydemircali.github.io         # repository metadata on GitHub Pages [know more at https://help.github.com/en/articles/repository-metadata-on-github-pages]
+#remote_theme       : YoussefRaafatNasry/portfolYOU           # uncomment this if you are using it as a remote theme
+
+### Google Analytics services ###
+#google_analytics    : UA-161754548-1
+
+### Author Info ###
+author:
+  name              : Yakup Demirçalı
+  image             : https://ydemircali.github.io/assets/my_profile.png
+# behance           : your_username
+# dribbble          : your_username
+  email             : ydemircali@gmail.com
+# telegram          : your_username
+# facebook          : your_username
+  github            : ydemircali
+# gitlab            : your_username
+# instagram         : your_username
+  linkedin          : yakupdemircali
+# medium            : your_username
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+# twitter           : your_username
+# vimeo             : your_username
+# youtube           : your_channel_name
+# skype             : your_username
+
+### Pagination ###
+paginate: 6
+paginate_path: "/articles/page-:num/"
+
+
+### Posts Permalink ###
+permalink: articles/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+
+
+### Exclude from processing ###
+exclude:
+- README.md
+- CONTRIBUTING.md
+- LICENSE
+- Gemfile
+- Gemfile.lock
