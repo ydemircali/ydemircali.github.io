@@ -69,7 +69,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-default-layout
   - jekyll-gist
-  - jekyll-admin
   - jekyll-github-metadata
   - jekyll-include-cache
   - jemoji
