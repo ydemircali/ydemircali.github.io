@@ -104,6 +104,8 @@ public class NewsContext : DbContext
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_demo.gif?raw=true)
   
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_queue.PNG?raw=true)
+  
   Bu çalışma ile mesaj(process) kuyruğu sistemi olan RabbitMQ bileşenlerinden olan Publisher yani kuyruğa processleri iletmeyi ve RabbitMQ(Routing,Exchange Type,Queue) yani iletilen processleri alan ve kuyruğa ekleyen bileşenlerini incelemiş olduk. İletilen bu processlerin bir Consumer ile yani bu kuyruktaki iletileri dinleyen veya bunları tüketen bileşen var. 
   
   Consumer yapısını bir sonraki yazıda EF Core kullanıp DB ye kaydeden bir yapı ile devam etmek istiyorum.
@@ -112,3 +114,4 @@ public class NewsContext : DbContext
 
   
   [Kaynak Kodlar](https://github.com/ydemircali/AccountingRabbitMQ)
+ 
