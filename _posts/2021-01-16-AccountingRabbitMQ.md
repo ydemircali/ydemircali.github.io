@@ -1,12 +1,11 @@
 ---
-title: RabbitMQ and .Net Core
+title: RabbitMQ, .Net Core, Web Api, Microservice
 tags: [HowTo, Notes, RabbitMQ, .Net Core]
 style: fill
 color: success
-description: Simple accounting receipt operations with RabbitMQ and .Net Core
+description: RabbitMQ, .Net Core, Web Api, Microservice ile Basit Muhasebe işlemleri
 ---
 
-RabbitMQ ile basit muhasebe fiş işlemleri
 
 [Kaynak Kodlar](https://github.com/ydemircali/AccountingRabbitMQ)
 
