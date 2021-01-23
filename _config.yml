@@ -37,11 +37,11 @@ author:
 
 ### Pagination ###
 paginate: 6
-paginate_path: "/articles/page-:num/"
+paginate_path: "/blog/page-:num/"
 
 
 ### Posts Permalink ###
-permalink: articles/:title
+permalink: blog/:title
 
 
 ### Collections ###
