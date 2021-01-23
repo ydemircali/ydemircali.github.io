@@ -6,6 +6,7 @@ color: success
 description: RabbitMQ, .Net Core, Web Api, Microservice ile Basit Muhasebe işlemleri
 ---
 
+RabbitMQ, .Net Core, Web Api, Microservice ile Basit Muhasebe işlemleri
 
 [Kaynak Kodlar](https://github.com/ydemircali/AccountingRabbitMQ)
 
