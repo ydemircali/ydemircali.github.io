@@ -13,9 +13,9 @@ Merhaba,
   Günlük hayatımızda veya iş hayatımızda, herhangi bir meslek erbabı eğer sorumluluklarının bilincindeyse veya ortaya güzel bir sonuç çıkarmak istiyorsa arayış içerisindedir.
 Bu arayış aslında mükemmelliğe doğru bir arayıştır. Her zaman yaptığı işin mükemmel olmasını veya sorumluluğunun karşılığını tam verdiğini hissettirmek ister. Bu mükemmellik arayışında işini daha çok kolaylaştıracak veya işine kalite katacak materyalleri arayıp bulmaya ve bunları kullanmaya başlar. 
   
-  Yazılım geliştirirken de bir problemin,bir hatanın çözümünü sağlayacak bir kod parçası veya bir teknoloji öğrendiğinizde oh be diye bir gevşeme bir yumuşaklık bir hoşluk hissedersiniz :) . Özellikle kullandığınız bir programlama dilinin her yeni versiyonunda bir problemin veya bir ihtiyacın karşılanack çözümler üretilmesi yazılımcılar için mutluluk kaynağıdır.
+  Yazılım geliştirirken de bir problemin,bir hatanın çözümünü sağlayacak bir kod parçası veya bir teknoloji öğrendiğinizde oh be diye bir gevşeme bir yumuşaklık bir hoşluk hissedersiniz :) . Özellikle kullandığınız bir programlama dilinin her yeni versiyonunda bir problem veya bir ihtiyaç için çözümler üretilmesi yazılımcılar için mutluluk kaynağıdır.
   
-  Örnek olarak Microsoft .Net 5 ile birlikte, Entitiy Framework Core'un da 5 versiyonunu yayınladı. Bu versiyonda çoğu özelliklerinden biri tablolar arasında many-to-many ilişkisini siz belirtmeden kurabilmesi.
+  Örnek olarak Microsoft .Net 5 ile birlikte, Entitiy Framework Core'un da 5 versiyonunu yayınladı. Bu versiyonda çoğu özelliklerinden biri, tablolar arasında many-to-many ilişkisini siz belirtmeden kurabilmesi.
 Önceden EF Core'da Code First ile ORM yapmaya çalışırken DbContext'i aşağıdaki gibi oluştururduk. İki class'a ek olarak üçüncü class ve DbContext'te OnModelCreating ile ilşkileri belirtiyorduk.
 
 ```csharp
@@ -78,11 +78,11 @@ public class NewsContext : DbContext
 
 ```
 
-  Bunun gibi yazılım hayatında daha birçok örnek verilebilir. Örnek olarak bir projenizde micro işlerden oluşan macro bir yapınız var. Bunların dependency durumlarını gördükçe düşündükçe ve bu bağımlıklardan gelen hataları gördükçe öfkenizden microlara bölünüyorsunuz. Ama bir bakıyorsunuz ki bu macro yapıyı microlara dönüştürmek varken neden ben micro micro olayım ki :)
+  Bunun gibi yazılım hayatında daha birçok örnek verilebilir. Örnek olarak bir projenizde micro işlerden oluşan macro bir yapınız var. Bunların dependency durumlarını gördükçe düşündükçe ve bu bağımlılıklardan gelen hataları gördükçe öfkenizden microlara bölünüyorsunuz. Ama bir bakıyorsunuz ki bu macro yapıyı microlara dönüştürmek varken neden ben micro micro olayım ki :)
   
   Projenizin detaylı analizini çıkarıyorsunuz, birbirine aslında bağımlı olmaya ihtiyaç duymayan hatta asenkron bile çalışabilecek yapılar ortaya çıkarıyorsunuz. Çıkardığınız bu analiz sonucunda yapınızı micro servislere bölüp farklı programlama diliyle geliştirmekten tutun farklı deployment süreçlerine kadar biribirinden bağımsız hale getiriyorsunuz. Öyle ki bir de bu micro servisleri container yapıları ile örneğin Docker ile dockerize ederek sürekli yaşamını sürdüren, crash olsa bile diğer micro yapıları etkilemeyen ve kolaylıkla tekrar hayata döndürülebilen yapılar oluşturuyorsunuz. 
   
-  Finansal işlemleri çok fazla olan ve bunlara muhasebeleştirmek zorunda olan bir yazılım ürününüzün olduğunu düşünün. Muhasebe işlemleri çoğunlukla asenkron bir yapıya ihtiyaç duyarlar. Örneğin ATM'ye gidip maaşınızı çektiğinizde banka tarafında bu kasa işlemlerinin o anda senkron olmasına gerek yoktur. Kaldı ki asenkron yapıldığında performans ve zaman açısında size birçok faydası vardır. Bankalar muhasebe işlemlerini genelde Queue(kuyruk) yapıları ile sürdürürler. Doğrudan bu işi yapmadım ama gözlemleyebildim :)
+  Finansal işlemleri çok fazla olan ve bunları muhasebeleştirmek zorunda olan bir yazılım ürününüzün olduğunu düşünün. Muhasebe işlemleri çoğunlukla asenkron bir yapıya ihtiyaç duyarlar. Örneğin ATM'ye gidip maaşınızı çektiğinizde banka tarafında bu kasa işlemlerinin o anda senkron olmasına gerek yoktur. Kaldı ki asenkron yapıldığında performans ve zaman açısında size birçok faydası vardır. Bankalar muhasebe işlemlerini genelde Queue(kuyruk) yapıları ile sürdürürler. Doğrudan bu işi yapmadım ama gözlemleyebildim :)
   
   RabbitMQ teknolojisini incelerken, .Net ile implemente edip kullanmak istediğimde aklıma bu muhasebe işlemleri geldi ve bu konu üzerinde basit bir örnek yapmak istedim.
   
