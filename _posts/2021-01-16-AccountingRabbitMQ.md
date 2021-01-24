@@ -92,14 +92,38 @@ public class NewsContext : DbContext
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_project_structure.PNG?raw=true)
   
-  Önce Accounting.Queue.Api projemizi ayağa kaldırıyoruz. /swagger ile kontrol edebilirsiniz. AddQeue ile Post alan bir method göreceksiniz.
+  
+  Birinci adım olarak Accounting.Queue.UI projesini ayağa kaldırıyoruz.
+  
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_ui.PNG?raw=true)
+  
+  UI'dan Api'ye aşağıdaki gibi istek atan Controller methodumuz.
+  
+```csharp
+[HttpPost]
+public async Task<IActionResult> PushAsync(FisModel fisModel)
+{
+    string json = JsonConvert.SerializeObject(fisModel);
+    StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+    var client = new HttpClient();
+
+    var response = await client.PostAsync(base_url+"AddQueue", data);
+    string result = await response.Content.ReadAsStringAsync();
+            
+    client.Dispose();
+            
+    return RedirectToAction("Index");
+}
+```
+
+  Bir sonraki adımda Accounting.Queue.Api projemizi ayağa kaldırıyoruz. /swagger ile kontrol edebilirsiniz. AddQeue ile Post alan bir method göreceksiniz.
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_api_swagger.PNG?raw=true)
   
   Burada requestleri AddQueue ile alıp RabbitMQService'e iletiyoruz. RabbitMQService aşağıdaki gibi iletileri alıp kuyruğa ekliyor.
 
 ```csharp
- 
 public class RabbitMQService
 {
    public FisModel data;
@@ -132,31 +156,7 @@ public class RabbitMQService
 }
 ```
 
-  Bir sonraki adım olarak Accounting.Queue.UI projesini ayağa kaldırıyoruz.
-  
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_ui.PNG?raw=true)
-  
-  UI'dan Api'ye aşağıdaki gibi istek atan Controller methodumuz.
-
-```csharp
-[HttpPost]
-public async Task<IActionResult> PushAsync(FisModel fisModel)
-{
-    string json = JsonConvert.SerializeObject(fisModel);
-    StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
-
-    var client = new HttpClient();
-
-    var response = await client.PostAsync(base_url+"AddQueue", data);
-    string result = await response.Content.ReadAsStringAsync();
-            
-    client.Dispose();
-            
-    return RedirectToAction("Index");
-}
-```
-
-  Aşağıdaki gibi ekranı ikiye ayırıp hem RaabitMQ admin paneli hem de UI projesini açarak denemeler yaptığınızda fişlerin kuyruğa eklendiğini göreceksiniz.
+  Üçüncü adım olarak da daha önce kurmuş olduğunuz RabbitMQ'nun admin paneli ile UI projesini açarak denemeler yaptığınızda fişlerin kuyruğa eklendiğini göreceksiniz.
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_demo.gif?raw=true)
   
