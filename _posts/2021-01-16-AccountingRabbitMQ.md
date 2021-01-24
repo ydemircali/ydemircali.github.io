@@ -98,37 +98,38 @@ public class NewsContext : DbContext
   
   Burada requestleri AddQueue ile alıp RabbitMQService'e iletiyoruz. RabbitMQService aşağıdaki gibi iletileri alıp kuyruğa ekliyor.
 
-  ```csharp
-    public class RabbitMQService
-    {
-        public FisModel data;
-        public RabbitMQService(FisModel _data)
-        {
-            this.data = _data;
-        }
-        public string Post()
-        {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare(queue: "Fiş Kuyruğu",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
+```csharp
+ 
+public class RabbitMQService
+{
+   public FisModel data;
+   public RabbitMQService(FisModel _data)
+   {
+      this.data = _data;
+   }
+   public string Post()
+   {
+      var factory = new ConnectionFactory() { HostName = "localhost" };
+      using (var connection = factory.CreateConnection())
+      using (var channel = connection.CreateModel())
+      {
+         channel.QueueDeclare(queue: "Fiş Kuyruğu",
+                              durable: false,
+                              exclusive: false,
+                              autoDelete: false,
+                              arguments: null);
 
-                var fisModel = JsonConvert.SerializeObject(data);
-                var body = Encoding.UTF8.GetBytes(fisModel);
+         var fisModel = JsonConvert.SerializeObject(data);
+         var body = Encoding.UTF8.GetBytes(fisModel);
 
-                channel.BasicPublish(exchange: "",
-                                     routingKey: "Fiş Kuyruğu",
-                                     basicProperties: null,
-                                     body: body);
-                return "TransactionObjectId:" + data.TransactionObjectId+ " added queue.";
-            }
-        }
+         channel.BasicPublish(exchange: "",
+                              routingKey: "Fiş Kuyruğu",
+                              basicProperties: null,
+                              body: body);
+         return "TransactionObjectId:" + data.TransactionObjectId+ " added queue.";
+       }
     }
+}
 ```
 
   Bir sonraki adım olarak Accounting.Queue.UI projesini ayağa kaldırıyoruz.
@@ -161,9 +162,11 @@ public async Task<IActionResult> PushAsync(FisModel fisModel)
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_queue.PNG?raw=true)
   
-  Bu çalışma ile mesaj(process) kuyruğu sistemi olan RabbitMQ bileşenlerinden olan Publisher yani kuyruğa processleri iletmeyi ve RabbitMQ(Routing,Exchange Type,Queue) yani iletilen processleri alan ve kuyruğa ekleyen bileşenlerini incelemiş olduk. İletilen bu processlerin bir Consumer ile yani bu kuyruktaki iletileri dinleyen veya bunları tüketen bileşen var. 
+  Bu çalışma ile asenkron bir ihtiyacımızı ,mesaj(process) kuyruğu sistemi olan RabbitMQ ile nasıl karşılayabiliriz sorusunun cevabının büyük kısmını incelemiş olduk. 
+  RabbitMQ kurgusunun üç bileşeni bulunuyor. Biz mesajları(process) ileten Publisher yapısını ve bu iletileri alıp kuyruğa ekleyen yapıyı incelemiş olduk. 
+  Üçüncü bileşen ise Consumer bileşeni yani kuyruktaki iletileri dinleyen veya bunları tüketen bileşen.
   
-  Consumer yapısını bir sonraki yazıda EF Core kullanıp DB ye kaydeden bir yapı ile devam etmek istiyorum.
+  Consumer yapısını bir sonraki yazıda EF Core kullanıp DB ye kaydeden bir yapı şeklinde devam etmek istiyorum.
   
   Şimdilik görüşmek dileğiyle, sağlıcakla kalın.
 
