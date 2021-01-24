@@ -96,10 +96,65 @@ public class NewsContext : DbContext
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_api_swagger.PNG?raw=true)
   
+  Burada requestleri AddQueue ile alıp RabbitMQService'e iletiyoruz. RabbitMQService aşağıdaki gibi iletileri alıp kuyruğa ekliyor.
+
+  ```csharp
+    public class RabbitMQService
+    {
+        public FisModel data;
+        public RabbitMQService(FisModel _data)
+        {
+            this.data = _data;
+        }
+        public string Post()
+        {
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: "Fiş Kuyruğu",
+                                     durable: false,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+
+                var fisModel = JsonConvert.SerializeObject(data);
+                var body = Encoding.UTF8.GetBytes(fisModel);
+
+                channel.BasicPublish(exchange: "",
+                                     routingKey: "Fiş Kuyruğu",
+                                     basicProperties: null,
+                                     body: body);
+                return "TransactionObjectId:" + data.TransactionObjectId+ " added queue.";
+            }
+        }
+    }
+```
+
   Bir sonraki adım olarak Accounting.Queue.UI projesini ayağa kaldırıyoruz.
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_ui.PNG?raw=true)
   
+  UI'dan Api'ye aşağıdaki gibi istek atan Controller methodumuz.
+
+```csharp
+[HttpPost]
+public async Task<IActionResult> PushAsync(FisModel fisModel)
+{
+    string json = JsonConvert.SerializeObject(fisModel);
+    StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+    var client = new HttpClient();
+
+    var response = await client.PostAsync(base_url+"AddQueue", data);
+    string result = await response.Content.ReadAsStringAsync();
+            
+    client.Dispose();
+            
+    return RedirectToAction("Index");
+}
+```
+
   Aşağıdaki gibi ekranı ikiye ayırıp hem RaabitMQ admin paneli hem de UI projesini açarak denemeler yaptığınızda fişlerin kuyruğa eklendiğini göreceksiniz.
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_demo.gif?raw=true)
