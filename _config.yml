@@ -63,7 +63,6 @@ defaults:
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-default-layout
   - jekyll-gist
   - jekyll-github-metadata
