@@ -1,5 +1,6 @@
 <head>
 
+  {% include analytics.html %}
   {% assign title = page.title | default: site.title | escape %}
   {% assign description = page.description | default: site.description | strip_html | strip_newlines | truncate: 160 %}
 
