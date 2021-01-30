@@ -88,12 +88,12 @@ public class NewsContext : DbContext
   
   .Net projemizin genel structure aşağıdaki gibi olacak. Micro servislere ayırıyoruz, RabbitMQ işlemlerini yapan micro servisimiz de bir web api olacak. 
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_project_structure.PNG?raw=true)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_project_structure.PNG?raw=true)
   
   
   Birinci adım olarak Accounting.Queue.UI projesini ayağa kaldırıyoruz.
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_ui.PNG?raw=true)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_ui.PNG?raw=true)
   
   UI'dan Api'ye aşağıdaki gibi istek atan Controller methodumuz.
   
@@ -117,7 +117,7 @@ public async Task<IActionResult> PushAsync(FisModel fisModel)
 
   Bir sonraki adımda Accounting.Queue.Api projemizi ayağa kaldırıyoruz. /swagger ile kontrol edebilirsiniz. AddQeue ile Post alan bir method göreceksiniz.
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_api_swagger.PNG?raw=true)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_api_swagger.PNG?raw=true)
   
   Burada requestleri AddQueue ile alıp RabbitMQService'e iletiyoruz. RabbitMQService aşağıdaki gibi iletileri alıp kuyruğa ekliyor.
 
@@ -156,9 +156,9 @@ public class RabbitMQService
 
   Üçüncü adım olarak da daha önce kurmuş olduğunuz RabbitMQ'nun admin paneli ile UI projesini açarak denemeler yaptığınızda fişlerin kuyruğa eklendiğini göreceksiniz.
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_demo.gif?raw=true)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_demo.gif?raw=true)
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/accounting_queue.PNG?raw=true)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_queue.PNG?raw=true)
   
   Bu çalışma ile asenkron bir ihtiyacımızı ,mesaj(process) kuyruğu sistemi olan RabbitMQ ile nasıl karşılayabiliriz sorusunun cevabının büyük kısmını incelemiş olduk. 
   RabbitMQ kurgusunun üç bileşeni bulunuyor. Biz mesajları(process) ileten Publisher yapısını ve bu iletileri alıp kuyruğa ekleyen yapıyı incelemiş olduk. 
