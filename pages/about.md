@@ -7,14 +7,18 @@ weight: 3
 
 # **About Me**
 
+
+Hello World! I'm **{{ site.author.name }}**. <br>
+I am a Software Developer. I interested in the following technologies.<br>
+
+.Net / .Net Core, ASP.NET/CORE MVC , WPF, WCF ,JavaScript, TypeScript, Angular, MS SQL, Oracle, TSQL, PLSQL, ElasticSearch, Redis, Azure DevOps, Git, TFS.
+
 <!--
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 </div>
 -->
-<div class="row">
-{% include about/about.html %}
-</div>
+
 
 <div class="row">
 {% include about/timeline.html %}
