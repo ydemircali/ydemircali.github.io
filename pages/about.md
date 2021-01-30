@@ -12,8 +12,9 @@ weight: 3
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
 </div>
 -->
-
+<div class="row">
 {% include about/about.html %}
+</div>
 
 <div class="row">
 {% include about/timeline.html %}
