@@ -13,7 +13,7 @@ weight: 3
 </div>
 -->
 <div class="row">
-{% include landing.html %}
+{% include about/about.html %}
 </div>
 
 <div class="row">
