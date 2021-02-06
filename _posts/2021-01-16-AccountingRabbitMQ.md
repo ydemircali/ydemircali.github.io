@@ -166,9 +166,9 @@ public class RabbitMQService
   
   Consumer yapısını bir sonraki yazıda EF Core kullanıp DB ye kaydeden bir yapı şeklinde devam etmek istiyorum.
   
-  Şimdilik görüşmek dileğiyle, sağlıcakla kalın.
+  Görüşmek dileğiyle, sağlıcakla kalın.
 
-  
-  [Accounting.Client](https://github.com/ydemircali/Accounting.Client?raw=true)
-  [Accounting.RabbitMQ.Api](https://github.com/ydemircali/Accounting.RabbitMQ.Api?raw=true)
+  Kaynak Kodlar :
+  [Accounting.Client](https://github.com/ydemircali/Accounting.Client) <br />
+  [Accounting.RabbitMQ.Api](https://github.com/ydemircali/Accounting.RabbitMQ.Api)
  
