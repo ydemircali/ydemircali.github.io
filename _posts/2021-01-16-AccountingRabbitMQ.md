@@ -169,6 +169,6 @@ public class RabbitMQService
   Şimdilik görüşmek dileğiyle, sağlıcakla kalın.
 
   
-  [Accounting.Client](https://github.com/ydemircali/Accounting.Client)
-  [Accounting.RabbitMQ.Api](https://github.com/ydemircali/Accounting.RabbitMQ.Api)
+  [Accounting.Client](https://github.com/ydemircali/Accounting.Client?raw=true)
+  [Accounting.RabbitMQ.Api](https://github.com/ydemircali/Accounting.RabbitMQ.Api?raw=true)
  
