@@ -88,10 +88,11 @@ public class NewsContext : DbContext
   
   .Net projemizin genel structure aşağıdaki gibi olacak. Micro servislere ayırıyoruz, RabbitMQ işlemlerini yapan micro servisimiz de bir web api olacak. 
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_project_structure.PNG?raw=true)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_api_structure.PNG)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_client_structure.PNG)
   
   
-  Birinci adım olarak Accounting.Queue.UI projesini ayağa kaldırıyoruz.
+  Birinci adım olarak Accounting.Client projesini ayağa kaldırıyoruz.
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_ui.PNG?raw=true)
   
@@ -115,7 +116,7 @@ public async Task<IActionResult> PushAsync(FisModel fisModel)
 }
 ```
 
-  Bir sonraki adımda Accounting.Queue.Api projemizi ayağa kaldırıyoruz. /swagger ile kontrol edebilirsiniz. AddQeue ile Post alan bir method göreceksiniz.
+  Bir sonraki adımda Accounting.RabbitMQ.Api projemizi ayağa kaldırıyoruz. /swagger ile kontrol edebilirsiniz. AddQeue ile Post alan bir method göreceksiniz.
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_api_swagger.PNG?raw=true)
   
@@ -169,5 +170,6 @@ public class RabbitMQService
   Şimdilik görüşmek dileğiyle, sağlıcakla kalın.
 
   
-  [Kaynak Kodlar](https://github.com/ydemircali/AccountingRabbitMQ)
+  [Accounting.Client](https://github.com/ydemircali/Accounting.Client)
+  [Accounting.RabbitMQ.Api](https://github.com/ydemircali/Accounting.RabbitMQ.Api)
  
