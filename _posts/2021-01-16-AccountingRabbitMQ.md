@@ -88,8 +88,7 @@ public class NewsContext : DbContext
   
   .Net projemizin genel structure aşağıdaki gibi olacak. Micro servislere ayırıyoruz, RabbitMQ işlemlerini yapan micro servisimiz de bir web api olacak. 
   
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_api_structure.PNG)
-  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_client_structure.PNG)
+  ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_project_structure.PNG?raw=true)
   
   
   Birinci adım olarak Accounting.Client projesini ayağa kaldırıyoruz.
