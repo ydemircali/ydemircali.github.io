@@ -38,7 +38,7 @@ Gereksiz yere ölçeklemeler, bir dil veya platforma bağımlı halde bulunma, s
 Tabi uygulamanızı mikroservis mimariye geçirmek veya sıfırdan mikroservis mimarisi ile yazmanın da kendine göre gereksinimleri vardır. En son verdiğimiz deployment sürecinden bahsedelim. 
 Uygulamanızı birçok mikroservis böldüğünüzde her bir mikroservis için farklı deployment süreci işletilmesi gerekiyor. Bunun için de güçlü bir CI/CD süreçlerini yöneten bir DevOps ekibinizin olması kaçınılmaz hal alıyor.<br>
 Aksi halde her deployment için harcadığınız operasyonel eforlar uzun sürede içinden çıkılmaz hal alabiliyor. DevOps ekibinin her mikroservis için kurguladığı automated relase pipeline lar sayesinde deployment süreçleriniz daha başarılı hale geliyor.<br>
-CI/CD pipeline toolları için Azure Pipeline, Jenkins, CircleCI, TeamCity gibi toollar örnek verilebilir. Bakınız : https://www.katalon.com/resources-center/blog/ci-cd-tools/  <br>
+CI/CD pipeline toolları için Azure Pipeline, Jenkins, CircleCI, TeamCity gibi toollar örnek verilebilir. Bakınız :[https://www.katalon.com/resources-center/blog/ci-cd-tools/](https://www.katalon.com/resources-center/blog/ci-cd-tools/)  <br>
 
 Biz ne yapmıştık :). Bir önceki yazıda basit muhasebe işlemini, asenkron yapıda kurgulayıp RabbitMQ'ya publish etmiştik. Bunun için bir client uygulamamız ve diğer clientların da olabileceği düşüncesiyle oluşturulan bir api tasarlamıştık.<br>
 Daha önce bahsettiğimiz gibi kuyruk yapılarında bir de consumer yapısı vardır. Yani daha önce enqueue edilen, kuyruğa eklenen iletileri, o kuyruğa subscribe olup tüketen consumerların processi hakkında ufak bir örnek verelim.<br>
@@ -52,13 +52,13 @@ Tasarladığımız genel yapı :<br>
 
 Peki Nodejs ? <br>
 Microsoft'ta yer alan tanımı kullanmak istiyorum. (V8 Microsoft Edge'de de kullanılıyormuş, Nodejs tanımlarında V8'den bahsedilirken genelde Chrome diye örnek verilir sadece :) )<br>
-https://docs.microsoft.com/en-us/learn/modules/intro-to-nodejs/2-what  Nodejs, JavaScript ile server side uygulamalar yazabileceğimiz, bir Javascript Runtime platformudur.
+[https://docs.microsoft.com/en-us/learn/modules/intro-to-nodejs/2-what](https://docs.microsoft.com/en-us/learn/modules/intro-to-nodejs/2-what)  Nodejs, JavaScript ile server side uygulamalar yazabileceğimiz, bir Javascript Runtime platformudur.
 Yani JavaScript uygulamalarını veya kodularını bir sunucu gibi bir tarayıcının dışındaki birçok yerde çalıştırmak için Node.js'yi kullanabilirsiniz.<br>
 Node.js, Google Chrome, Opera ve Microsoft Edge dahil olmak üzere birçok tarayıcıya güç veren C/C++ ile yazılmıi V8 adlı bir JavaScript motoru üzerinde çalışır.<br>
 V8 Engine'i Java'daki JVM'ye benzetmek yanlış olmaz herhalde. <br>
 
 Bu kadar hikaye ve kısa bilgilerden sonra gelelim NodeJs ile RabbitMQ'dan nasıl dequeue yaparız ona bakalım. <br>
-RabbitMQ kendi sitesinde hem send hem de receive örneğini vermiş https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html . 
+RabbitMQ kendi sitesinde hem send hem de receive örneğini vermiş [https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html](https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html). 
 Biz de buradan hareketle kendi consumer yapımızı kurmak istediğimizde aşağıdaki gibi nihai hal alıyor.<br>
 
 [Nodejs](https://nodejs.org/en/)'i kurduk ve Visual Studio Code'da (IDE farketmez :D ) bir klasör oluşturup index.js diye bir js dosyası oluşturalım.
