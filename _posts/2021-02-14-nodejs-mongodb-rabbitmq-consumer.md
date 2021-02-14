@@ -24,20 +24,20 @@ Gelelim değişen şartlara veya zamanla ortaya çıkan ihtiyaçlara. <br>
 Klinik merkezinde hasta sayısı gün geçtikçe artıyor, doktor sayısı artıyor, uygulamanın sayfaları geç yanıt veriyor, database transaction işlemleri gecikmeye başlıyor. 
 Siz de uygulamanın gücü azaldı herhalde deyip :) dikey veya yatay ölçeklemelerle server/cpu/ram vs arttırarak uygulamanın iyileştiğini gördünüz. <br>
 Aradan zaman geçti, klinikte bulunan radyoloji sonuçlarını dijitale aktarmak istediniz. Bu monolith uygulamanıza ek bir modul olarak devreye aldınız. 
-Herşey güzel giderken uygulamanın yavaşladığını gördünüz, güçlü bir monitoring kurgulamadığınızdan deneme yanılma yolları ile bir şekilde sebep olan radyoloji modülü olduğunu farkettiniz.
+Herşey güzel giderken uygulamanın yavaşladığını gördünüz, güçlü bir monitoring yapısı kurgulamadığınızdan deneme yanılma ile bir şekilde yavaşlamaya sebep olan modülün radyoloji modülü olduğunu farkettiniz.
 Demek ki radyoloji gelince uygulamanın gücü azaldı deyip :) bir daha ölçekleme yollarını aradınız. <br>
 Peki diğer modüller gayet güzel sorunsuz çalışıyorken sırf radyoloji modülü yavaş diye tüm uygulamayı ölçeklendirmek sizce doğru bir adım mıydı ?<br>
 Yeni bir ihtiyaç geldi e-reçete yazılması gerekiyor, hadi diyelim sadece java sdk sı bulunan bir sisteme mahkum kaldınız ve bu modülü java ile yazmanız şart oldu.
 Sırf bu modul için tüm uygulamayı java diline dönüştürüp yazmak sizce de doğru bir adım olur muydu ?<br>
-Günler geçiyor eklenen yeni modüller ile birlikte uygulamanız büyüyor. Ürün sahibinden de veya siz de artık şu cümleleri duyuyor veya söylüyorsunuz, tek bir modülün bir sayfasında küçücük bir değişklik yüzünden tüm uygulamayı proda almak için uğraşıyoruz.
+Günler geçiyor eklenen yeni modüller ile birlikte uygulamanız büyüyor. Ürün sahibi de siz de artık şu cümleleri kuruyorsunuz, tek bir modülün bir sayfasında küçücük bir değişklik yüzünden tüm uygulamayı proda almak için uğraşıyoruz.
 Bu cümleleri sık duymaya sebep olan monolith yapı, her seferinde deployment sürecini sancılı bir hale getirmiyor mu ? <br>
 
 Buraya kadar anlatılan hikaye, aslında Mikroservis mimariye geçiş için gerekli sebepler ve ihtiyaçlardan ibaretti.<br>
 Gereksiz yere ölçeklemeler, bir dil veya platforma bağımlı halde bulunma, sancılı deployment süreçleri vs. bunun gibi belki birçok neden daha mikroservis mimarinin gerekliliği hakkında sıralanailir.<br>
 
-Tabi uygulamanızı mikroservis mimariye geçirmek veya sıfırdan mikroservis mimarisi ile yazmanın da kendine göre gereksinimleri vardır. En son verdiğimiz deployment sürecinden bahsedelim. 
-Uygulamanızı birçok mikroservis böldüğünüzde her bir mikroservis için farklı deployment süreci işletilmesi gerekiyor. Bunun için de güçlü bir CI/CD süreçlerini yöneten bir DevOps ekibinizin olması kaçınılmaz hal alıyor.<br>
-Aksi halde her deployment için harcadığınız operasyonel eforlar uzun sürede içinden çıkılmaz hal alabiliyor. DevOps ekibinin her mikroservis için kurguladığı automated relase pipeline lar sayesinde deployment süreçleriniz daha başarılı hale geliyor.<br>
+Tabi uygulamanızı mikroservis mimariye geçirmek veya sıfırdan mikroservis mimarisi ile yazmanın da kendine göre gereksinimleri vardır. En son örnek verdiğimiz deployment sürecinden bahsedelim. 
+Uygulamanızı birçok mikroservise böldüğünüzde her bir mikroservis için farklı deployment süreci işletilmesi gerekir. Bunun için de güçlü bir CI/CD süreçlerini yöneten bir DevOps ekibinizin olması kaçınılmaz hal alır.<br>
+Aksi halde her deployment için harcadığınız operasyonel eforlar uzun vadede içinden çıkılmaz hal alabilir. Güçlü bir DevOps ekibinin her mikroservis için kurguladığı automated release pipeline lar sayesinde deployment süreçleriniz daha başarılı hale geliyor.<br>
 CI/CD pipeline toolları için Azure Pipeline, Jenkins, CircleCI, TeamCity gibi toollar örnek verilebilir. Bakınız :[https://www.katalon.com/resources-center/blog/ci-cd-tools/](https://www.katalon.com/resources-center/blog/ci-cd-tools/)  <br>
 
 Biz ne yapmıştık :). Bir önceki yazıda basit muhasebe işlemini, asenkron yapıda kurgulayıp RabbitMQ'ya publish etmiştik. Bunun için bir client uygulamamız ve diğer clientların da olabileceği düşüncesiyle oluşturulan bir api tasarlamıştık.<br>
@@ -53,16 +53,16 @@ Tasarladığımız genel yapı :<br>
 Peki Nodejs ? <br>
 Microsoft'ta yer alan tanımı kullanmak istiyorum. (V8 Microsoft Edge'de de kullanılıyormuş, Nodejs tanımlarında V8'den bahsedilirken genelde Chrome diye örnek verilir sadece :) )<br>
 [https://docs.microsoft.com/en-us/learn/modules/intro-to-nodejs/2-what](https://docs.microsoft.com/en-us/learn/modules/intro-to-nodejs/2-what)  Nodejs, JavaScript ile server side uygulamalar yazabileceğimiz, bir Javascript Runtime platformudur.
-Yani JavaScript uygulamalarını veya kodularını bir sunucu gibi bir tarayıcının dışındaki birçok yerde çalıştırmak için Node.js'yi kullanabilirsiniz.<br>
+Yani JavaScript uygulamalarını veya kodlarını bir sunucu gibi bir tarayıcının dışındaki birçok yerde çalıştırmak için Node.js'yi kullanabiliriz.<br>
 Node.js, Google Chrome, Opera ve Microsoft Edge dahil olmak üzere birçok tarayıcıya güç veren C/C++ ile yazılmıi V8 adlı bir JavaScript motoru üzerinde çalışır.<br>
 V8 Engine'i Java'daki JVM'ye benzetmek yanlış olmaz herhalde. <br>
 
-Bu kadar hikaye ve kısa bilgilerden sonra gelelim NodeJs ile RabbitMQ'dan nasıl dequeue yaparız ona bakalım. <br>
+Bu kadar hikaye ve kısa bilgilerden sonra gelelim NodeJs ile RabbitMQ'dan nasıl dequeue/consume yaparız ona bakalım. <br>
 RabbitMQ kendi sitesinde hem send hem de receive örneğini vermiş [https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html](https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html). 
-Biz de buradan hareketle kendi consumer yapımızı kurmak istediğimizde aşağıdaki gibi nihai hal alıyor.<br>
+Biz de buradan hareketle kendi consumer yapımızı kurmak istediğimizde aşağıdaki adımları kurgulayabiliriz.<br>
 
-[Nodejs](https://nodejs.org/en/)'i kurduk ve Visual Studio Code'da (IDE farketmez :D ) bir klasör oluşturup index.js diye bir js dosyası oluşturalım.
-Aşağıdaki komutlarla RabbitMQ işlemlerini sağlayacak amqp kütüphanesini, web uygulama çatısı olan diğer nodejs modülü express kütüphanesinin npm paketlerini yüklüyoruz. .Net platformunda referans oalrak eklediğimiz nuget paketleri gibi düşünebiliriz.
+[Nodejs](https://nodejs.org/en/)'i kurduk ve Visual Studio Code'da (IDE farketmez :D ) bir klasör oluşturup index.js adında dosya oluşturalım.
+Aşağıdaki komutlarla RabbitMQ işlemlerini sağlayacak amqp kütüphanesinin, web uygulama çatısı olan diğer nodejs modülü express kütüphanesinin npm paketlerini yüklüyoruz. .Net platformunda referans olarak eklediğimiz nuget paketleri gibi düşünebiliriz.
 
 ```bat
 npm install amqplib
@@ -132,7 +132,7 @@ const transactionSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('AccTransaction',transactionSchema, 'Transactions')
 ```
-Bu model daha önce oluştrduğumuz index.js 'de import edip kullanıyoruz. Kuyruktan aldığımız datayı modele convert edip Transactions dokümanına kaydediyoruz.<br>
+Bu model daha önce oluşturduğumuz index.js 'de import edip kullanıyoruz. Kuyruktan aldığımız datayı modele convert edip Transactions dokümanına kaydediyoruz.<br>
 index.js nihai ;
 
 ```javascript
