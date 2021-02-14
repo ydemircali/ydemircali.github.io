@@ -105,14 +105,14 @@ node index.js
 
 ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_nodejs_rabbitmq.PNG?raw=true)
   
-Test ettiğimde Nodejs 1000 kaydı sadece 2-3 sn gibi kısa bir sürede consume ettiğini farkettim. MongoDB'ye yazmayla birlikte toplamda 5-6 sn gibi bir süre aldı. Yani gereçekten Nodejs inanılmaz performanslı.</br>
+Test ettiğimde Nodejs 1000 kaydı sadece 2-3 sn gibi kısa bir sürede consume ettiğini farkettim. MongoDB'ye yazmayla birlikte toplamda 5-6 sn gibi bir süre aldı. Yani gereçekten Nodejs inanılmaz performanslı.<br>
 
-Consume ile işlemi ile birlikte aldığınız dataları MongoDB'ye kaydetmeyi düşündük diyelim. MongoDB kurulumuna [şuradan](https://www.mongodb.com/try/download/community) bakabilirsiniz. </br>
+Consume ile işlemi ile birlikte aldığınız dataları MongoDB'ye kaydetmeyi düşündük diyelim. MongoDB kurulumuna [şuradan](https://www.mongodb.com/try/download/community) bakabilirsiniz. <br>
 Aynı projede aşağıdaki komut ile mongoDb işlemlerini yapacağımız mongoose npm pkaetini ekliyoruz.
 ```bat
 npm install mongoose
 ```
-MongoDB'de Accounting diye bir db oluşturuyoruz. Bu db altında Transactions adında doküman oluşturulur. Projemizde Models klasörü altında AccTransaction diye bir model oluşturalım. Bunu da bir schema ile bu dokümana bağlayalım.</br>
+MongoDB'de Accounting diye bir db oluşturuyoruz. Bu db altında Transactions adında doküman oluşturulur. Projemizde Models klasörü altında AccTransaction diye bir model oluşturalım. Bunu da bir schema ile bu dokümana bağlayalım.<br>
 AccTransaction.js
 
 ```javascript
@@ -132,7 +132,7 @@ const transactionSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('AccTransaction',transactionSchema, 'Transactions')
 ```
-Bu model daha önce oluştrduğumuz index.js 'de import edip kullanıyoruz. Kuyruktan aldığımız datayı modele convert edip Transactions dokümanına kaydediyoruz.</br>
+Bu model daha önce oluştrduğumuz index.js 'de import edip kullanıyoruz. Kuyruktan aldığımız datayı modele convert edip Transactions dokümanına kaydediyoruz.<br>
 index.js nihai ;
 
 ```javascript
@@ -179,9 +179,9 @@ node index.js
 ```
 ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_mongoDB.PNG?raw=true)
 
-MongoDB toolu için [NoSQLBooster](https://nosqlbooster.com/) 'u kullanabilirsiniz.</br>
+MongoDB toolu için [NoSQLBooster](https://nosqlbooster.com/) 'u kullanabilirsiniz.<br>
 
-Mikroservisler, asenkron işlemler, bağımsız dil ve izole yapılar gibi konulara değindiğimiz yazının sonuna geldik. </br>
+Mikroservisler, asenkron işlemler, bağımsız dil ve izole yapılar gibi konulara değindiğimiz yazının sonuna geldik. <br>
 Bir başka yazıda buluşmak dileğiyle, sağlıcakla kalın.
 
 Kaynak Kodlar :<br />
