@@ -47,8 +47,8 @@ Bunu kurgularken de muhasebe fişlerinin izole bir yapıda olabileceğinin fark�
 Yeter ki konuşlandırdığımız yapılar doğru bir kararda olsun.
 Eğer senkron çalışan ve immediate consistency dediğimiz anlık olarak bir tutarlığa ihtiyacınız varsa, bunun için kuyruk yapısı ve NoSQL veritabanı sizin için doğru bir seçim olmayabilir. <br>
 Strong consistency, eventual consistency veya isolation kavramları gibi SQL-NoSQL konuları daha detaylı bir konu olduğundan burada bırakmak istiyorum. <br>
-Tasarladığımız genel yapı :
-![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_microservice.PNG?raw=true)
+Tasarladığımız genel yapı :<br>
+![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_microservice.PNG?raw=true) <br>
 
 Peki Nodejs ? <br>
 Microsoft'ta yer alan tanımı kullanmak istiyorum. (V8 Microsoft Edge'de de kullanılıyormuş, Nodejs tanımlarında V8'den bahsedilirken genelde Chrome diye örnek verilir sadece :) )<br>
