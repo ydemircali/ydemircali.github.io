@@ -12,13 +12,13 @@ Merhaba,
 Aynı zamanda 2010'lu yıllardan bu yana hayatımıza giren ve yazılım sektöründe oldukça sık rastladığımız Mikroservis mimariler hakkında temel gereksinimden bahsetmiştik. Bu kısmı biraz daha irdeleyebiliriz. 
 Mikroservisten önce veya mikroservislere ihtiyaç duymayan uygulamaları monolith yapıda kurguluyorduk/kurguluyoruz.<br>
 
-Örneğin bir klinik merkezinde hasta bilgilerini excelde tutmak yerine artık bir yazılım geliştirilmesine kara verildi. Bir dns/hosting hizmeti satın alındı, database olarak ilişkisel database(mysql gibi) ve yazılım platformu olarak da .Net platformunu seçtik. 
+Bu konuyu biraz hikayeleştirmek istersek, örneğin bir klinik merkezinde hasta bilgilerini excelde tutmak yerine artık bir yazılım geliştirilmesine kara verildi. Bir dns/hosting hizmeti satın alındı, database olarak ilişkisel database(mysql gibi) ve yazılım platformu olarak da .Net platformunu seçtik. 
 Ürün sahibinden aldığımız bilgilerle uygulamamızı doktor, hasta, randevu gibi basit modüller halinde tasarlayıp tek bir paket halinde teslim ettik.<br>
 Bir hasta ofise geliyor veya danışmanı arayarak randevu almak istiyor. Randevu sayfasından hasta, doktor ve gün saat gibi bilgiler girilip provizyon oluşturuluyor. 
 Muayene günü geldiğinde doktor önüne hasta bilgileri geliyor, muayeneden sonra hastanın muayene/tedavi bilgileri girilip işlem sonlandırılıyor.
 Basit bir sistem ile çok fazla doktor ve hastası olmayan dolayısıyla çok transaction işlemi olmayan bu uygulama gayet yeterli oluyor.<br>
 Ürün sahibi çeşitli istekler doğrultusunda, siz de fix/feature geliştirmeler yaparak daha önce belirlemiş olduğunuz(böyle ufak yerlerde genelde prod takvimler pek olmuyor, kasap misali prod geçişleri oluyor gerçi :) )
-uygulamayı canlıya alma günü ve saatinde yeni bir versyion ile proda geçişinizi yaptınız ve gayet sağlıklı bir şekilde bu döngü devam etti. <br>
+uygulamayı canlıya alma günü ve saatinde yeni bir versiyon ile proda geçişinizi yaptınız. Monolith olarak tek bir paket halinde oluşturduğunuz bu uygulama gayet sağlıklı bir şekilde bu döngüde devam etti. <br>
 
 Gelelim değişen şartlara veya zamanla ortaya çıkan ihtiyaçlara. <br>
 Klinik merkezinde hasta sayısı gün geçtikçe artıyor, doktor sayısı artıyor, uygulamanın sayfaları geç yanıt veriyor, database transaction işlemleri gecikmeye başlıyor. 
@@ -29,16 +29,16 @@ Demek ki radyoloji gelince uygulamanın gücü azaldı deyip :) bir daha ölçek
 Peki diğer modüller gayet güzel sorunsuz çalışıyorken sırf radyoloji modülü yavaş diye tüm uygulamayı ölçeklendirmek sizce doğru bir adım mıydı ?<br>
 Yeni bir ihtiyaç geldi e-reçete yazılması gerekiyor, hadi diyelim sadece java sdk sı bulunan bir sisteme mahkum kaldınız ve bu modülü java ile yazmanız şart oldu.
 Sırf bu modul için tüm uygulamayı java diline dönüştürüp yazmak sizce de doğru bir adım olur muydu ?<br>
-Günler geçiyor eklenen yeni modüller ile birlikte uygulamanız büyüyor. Ürün sahibinden veya siz de artık şu cümleleri duyuyor veya söylüyorsunuz, tek bir modülün bir sayfasında küçücük bir değişklik yüzünden tüm uygulamayı proda almak için uğraşıyoruz.
+Günler geçiyor eklenen yeni modüller ile birlikte uygulamanız büyüyor. Ürün sahibinden de veya siz de artık şu cümleleri duyuyor veya söylüyorsunuz, tek bir modülün bir sayfasında küçücük bir değişklik yüzünden tüm uygulamayı proda almak için uğraşıyoruz.
 Bu cümleleri sık duymaya sebep olan monolith yapı, her seferinde deployment sürecini sancılı bir hale getirmiyor mu ? <br>
 
 Buraya kadar anlatılan hikaye, aslında Mikroservis mimariye geçiş için gerekli sebepler ve ihtiyaçlardan ibaretti.<br>
-Gereksiz yere ölçeklemeler, bir dil veya platforma bağımlı halde bulunma, sancılı deployment süreçleri vs. bunun gibi belki birkaç neden daha mikroservis mimarinin gerekliliği hakkında sıralanailir.<br>
+Gereksiz yere ölçeklemeler, bir dil veya platforma bağımlı halde bulunma, sancılı deployment süreçleri vs. bunun gibi belki birçok neden daha mikroservis mimarinin gerekliliği hakkında sıralanailir.<br>
 
 Tabi uygulamanızı mikroservis mimariye geçirmek veya sıfırdan mikroservis mimarisi ile yazmanın da kendine göre gereksinimleri vardır. En son verdiğimiz deployment sürecinden bahsedelim. 
 Uygulamanızı birçok mikroservis böldüğünüzde her bir mikroservis için farklı deployment süreci işletilmesi gerekiyor. Bunun için de güçlü bir CI/CD süreçlerini yöneten bir DevOps ekibinizin olması kaçınılmaz hal alıyor.<br>
 Aksi halde her deployment için harcadığınız operasyonel eforlar uzun sürede içinden çıkılmaz hal alabiliyor. DevOps ekibinin her mikroservis için kurguladığı automated relase pipeline lar sayesinde deployment süreçleriniz daha başarılı hale geliyor.<br>
-CI/CD pipeline toolları için Jenkins, CircleCI, TeamCity gibi toolar örnek verilebilir. Bakınız : https://www.katalon.com/resources-center/blog/ci-cd-tools/  <br>
+CI/CD pipeline toolları için Azure Pipeline, Jenkins, CircleCI, TeamCity gibi toollar örnek verilebilir. Bakınız : https://www.katalon.com/resources-center/blog/ci-cd-tools/  <br>
 
 Biz ne yapmıştık :). Bir önceki yazıda basit muhasebe işlemini, asenkron yapıda kurgulayıp RabbitMQ'ya publish etmiştik. Bunun için bir client uygulamamız ve diğer clientların da olabileceği düşüncesiyle oluşturulan bir api tasarlamıştık.<br>
 Daha önce bahsettiğimiz gibi kuyruk yapılarında bir de consumer yapısı vardır. Yani daha önce enqueue edilen, kuyruğa eklenen iletileri, o kuyruğa subscribe olup tüketen consumerların processi hakkında ufak bir örnek verelim.<br>
@@ -47,6 +47,8 @@ Bunu kurgularken de muhasebe fişlerinin izole bir yapıda olabileceğinin fark�
 Yeter ki konuşlandırdığımız yapılar doğru bir kararda olsun.
 Eğer senkron çalışan ve immediate consistency dediğimiz anlık olarak bir tutarlığa ihtiyacınız varsa, bunun için kuyruk yapısı ve NoSQL veritabanı sizin için doğru bir seçim olmayabilir. <br>
 Strong consistency, eventual consistency veya isolation kavramları gibi SQL-NoSQL konuları daha detaylı bir konu olduğundan burada bırakmak istiyorum. <br>
+Tasarladığımız genel yapı :
+![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_microservice.PNG?raw=true)
 
 Peki Nodejs ? <br>
 Microsoft'ta yer alan tanımı kullanmak istiyorum. (V8 Microsoft Edge'de de kullanılıyormuş, Nodejs tanımlarında V8'den bahsedilirken genelde Chrome diye örnek verilir sadece :) )<br>
