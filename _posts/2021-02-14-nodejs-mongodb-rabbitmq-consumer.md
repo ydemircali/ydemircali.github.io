@@ -102,7 +102,7 @@ Yazdığımız index.js kodlarını node ile ayağa kaldırıyoruz. Burada Amqp 
 ```bat
 node index.js
 ```
-
+(Windows'u Etkinleştir...şşş :) )
 ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_nodejs_rabbitmq.PNG?raw=true)
   
 Test ettiğimde Nodejs 1000 kaydı sadece 2-3 sn gibi kısa bir sürede consume ettiğini farkettim. MongoDB'ye yazmayla birlikte toplamda 5-6 sn gibi bir süre aldı. Yani gereçekten Nodejs inanılmaz performanslı.<br>
