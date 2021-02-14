@@ -108,7 +108,7 @@ node index.js
 Test ettiğimde Nodejs 1000 kaydı sadece 2-3 sn gibi kısa bir sürede consume ettiğini farkettim. MongoDB'ye yazmayla birlikte toplamda 5-6 sn gibi bir süre aldı. Yani gereçekten Nodejs inanılmaz performanslı.<br>
 
 Consume işlemi ile aldığınız dataları MongoDB'ye kaydetmeyi düşündük diyelim. MongoDB kurulumuna [şuradan](https://www.mongodb.com/try/download/community) bakabilirsiniz. <br>
-Aynı projede aşağıdaki komut ile mongoDb işlemlerini yapacağımız mongoose npm pkaetini ekliyoruz.
+Aynı projede aşağıdaki komut ile mongoDb işlemlerini yapacağımız mongoose npm paketini ekliyoruz.
 ```bat
 npm install mongoose
 ```
