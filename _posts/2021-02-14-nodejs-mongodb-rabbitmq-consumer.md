@@ -1,7 +1,7 @@
 ---
 title: Nodejs ve MongoDB ile RabbitMQ consumer işlemi.
 tags: [HowTo, RabbitMQ, Nodejs, MongoDB]
-style: fill
+style:
 color: success
 description: Nodejs ve MongoDB ile RabbitMQ consumer işlemi
 ---
