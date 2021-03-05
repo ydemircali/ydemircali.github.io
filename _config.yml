@@ -71,9 +71,4 @@ plugins:
   - jemoji
 
 ### Exclude from processing ###
-exclude:
-- README.md
-- CONTRIBUTING.md
-- LICENSE
-- Gemfile
-- Gemfile.lock
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
