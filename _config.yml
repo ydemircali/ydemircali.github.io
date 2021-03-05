@@ -43,6 +43,11 @@ paginate_path: "/blog/page-:num/"
 ### Posts Permalink ###
 permalink: blog/:title
 
+### Disqus ###
+disqus:
+  shortname: ydemicali
+
+
 
 ### Collections ###
 collections:
