@@ -4,4 +4,7 @@ layout: default
 
 <div class="col-lg-10 mx-auto mt-5 article">
   {{ content }}
+  {% if site.disqus.shortname %}
+    {% include disqus.html %}
+  {% endif %}
 </div>
