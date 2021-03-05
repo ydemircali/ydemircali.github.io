@@ -3,6 +3,7 @@ title: RabbitMQ, .Net Core, Web Api, Microservice ile asenkron işlemler.
 tags: [HowTo, Notes, RabbitMQ, .Net Core]
 style:
 color: success
+comments: true
 description: RabbitMQ, .Net Core, Web Api, Microservice ile Basit Muhasebe işlemleri
 ---
 
