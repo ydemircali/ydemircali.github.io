@@ -5,7 +5,7 @@
   {% assign description = page.description | default: site.description | strip_html | strip_newlines | truncate: 160 %}
 
   {% if page.name and page.collection == 'projects' %}
-    {% assign title = page.name | escape %}
+    {% assign title = 'Yakup Demirçalı-' page.name | escape %}
   {% endif %}
 
   <meta charset="utf-8">
