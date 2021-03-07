@@ -22,10 +22,10 @@ Prodüksiyon işi mi değil mi araştırmadım ama filmin her sahnesinde nerdeys
 Filmde dedektifler seri katili araştırırken, katilin her cinayette bir kelime bıraktığını görüyor ve birkaç kelimeden sonra emektar ve tecrübeli dedektif Morgan abimiz bunların yedi ölümcül günahlara işaret ettiğini anlıyor. 
 Ardından kütüphaneye gidip bu ölümcül günahlardan bahseden kitapları tek tek çıkarıyor ve anlamaya çalışıyor. İşte en çok hoşuma giden sahne geliyor... :)
 Morgan abi daha önce iş yaptığı FBI'dan adamıyla iletişime geçiyor. Sonra adam gelip bir paket bırakıp gidiyor. Genç dedektif Brad abi ne oluyor diye sorunca, Morgan abi işte o cümleyi kuruyor... :)
-"Kütüphaneye gelen kişilerin hangi kitabı okumak için ödünç aldığı vs. tutuluyor ve bu bilgiler FBI'ın bilgisayarların da saklanıyor."
+"Kütüphaneye gelen kişilerin hangi kitabı okumak için ödünç aldığı vs. tutuluyor ve bu bilgiler FBI'ın bilgisayarlarında saklanıyor."
 Aldıkları bu istihbarat ile yedi ölümcül günah ile ilişkilendirdiği o kitapları okuyan kişilerin peşine düşüyorlar vs. film öylece devam ediyor. Güzel film tavsiye edilir, sonunu güzel bağlamışlar.
 
-Bu film hikayesinde anlatılan FBI sahnesini bir yazılımcı olarak düşününce, aklıma loglama mekanizması geldi. Günümüzde hareket-ksiyon logları çok kıymetli. Data Mining yani veri madenciliği konusunda çok yardımcı oluyor.
+Bu film hikayesinde anlatılan FBI sahnesini bir yazılımcı olarak düşününce, aklıma loglama mekanizması geldi. Günümüzde hareket-aksiyon logları çok kıymetli. Data Mining yani veri madenciliği konusunda çok yardımcı oluyor.
 Mesela, bunu google çok yapıyor, ziyaret ettiğiniz sitelerin bilgisini alıyor daha sonra ilişkili reklamları önünüze sunuyor. Ya da kurumsal bir uygulamada ekran logları tutulup, bu loglar işlenerek ekranlar ve kullanıcılar hakkında yorumlar yapılıyor, kararlar alınıyor.
 Kullanılmayan ekranlar veya en çok kullanılan ekranlar vs vs...
 
