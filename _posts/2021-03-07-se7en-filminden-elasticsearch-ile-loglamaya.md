@@ -160,7 +160,7 @@ public abstract class ElasticSearchService<T> : IElasticSearchService<T> where T
 ```
 
 Base servisi kitap indexini kullanan BookServisi kullanacak. Ayrıca kullanıcların kitap aksiyonlarını da tutacağımız farklı bir index için de UserBookService kullanacak.
-Öncelikle BooksController altında elimdeki sampla dataya sahip json dosyadan book adında index olarak ElasticSearch'e kaydeden bir method yazıyoruz. 
+Öncelikle BooksController altında elimdeki sample dataya sahip json dosyadan book adında index olarak ElasticSearch'e kaydeden bir method yazıyoruz. 
 Kitapların kaydedildiği bir admin panel yapmadığım için kısayoldan bu yöntemi kullanıyoruz.
 
 ```csharp
