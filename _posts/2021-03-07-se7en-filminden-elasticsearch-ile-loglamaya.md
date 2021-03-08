@@ -32,7 +32,8 @@ Kullanılmayan ekranlar veya en çok kullanılan ekranlar vs vs...
 Loglama denince modern teknolojilere bakınca akla ilk gelen ELK stack oluyor. E- ElasticSearch, L- Logstash, K-Kibana. Burada ElasticSearch bir NoSQL veritabanı, arama ve analiz motoru olarak görev alıyor. Logstash, aynı anda birden fazla kaynaktan veri alan, dönüştüren ve daha sonra Elasticsearch gibi bir stash-database'e gönderen, bir 
 server‑side data processing pipeline olarak görev alıyor. Kibana ise Elasticsearch'te tutulan verileri çizelge ve grafiklerle görselleştirerek kullanıcaya sunmada görev alıyor. Detaylı bilgi [ELK Stack](https://www.elastic.co/what-is/elk-stack).
 
-Bu çalışmada ağırlıklı olarak ElasticSearch ve Kibana tarafını kullanıyor olacağız, Logstash gibi bir pipeline'a şu aşamada ihtiyacımız bulunmuyor. Ama mesela bir kuyruk yapısı olsa bu kuyruktan Logstash'e logları consume edebilir, asenkron performans açısından faydalanabilirsiniz.
+Bu çalışmada ağırlıklı olarak ElasticSearch ve Kibana tarafını kullanıyor olacağız, Logstash gibi bir pipeline'a şu aşamada ihtiyacımız bulunmuyor. Ama mesela mikroservis
+bir mimaride farklı servislerden gelen logları merkezileştirmek istiyorsunuz. Asenkkron yapıda kuyruk mekanizaması kurgulayıp bu kuyruktan Logstash'e logları consume edebilir, logların aktığı piplineı merkezileştirebilir asenkron performans açısından faydalanabilirsiniz.
 
 Bizim senaryomuz şöyle olacak : Login işlemleri yapılabilen bir web uygulaması olacak. Burada kitaplar listelenebilecek,
 detay görüntüleme ve kullanıcı kendi kütüphanesine ekleyebilmek için oturum açması gerekecek.
