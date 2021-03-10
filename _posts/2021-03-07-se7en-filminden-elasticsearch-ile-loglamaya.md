@@ -282,32 +282,28 @@ public JsonResult AddMyLibrary(Guid bookId)
     AjaxResult result = new AjaxResult();
 
     var book = _bookService.Get(bookId, _bookIndexName);
-    var userBooks = _userBookService.SearchUserBooks(_userBookIndexName,User.Identity.Name).ToList();
 
-    if (book != null && !userBooks.Any(a => a.Action == "AddMyLibrary" && a.BookTitle == book.Title))
+    var userBookModel = new UserBookModel(){
+        Id = Guid.NewGuid(),
+        UserName = User.Identity.Name,
+        BookTitle = book.Title,
+        BookCategory = book.Genre,
+        BookSubCategory = book.SubGenre,
+        BookAuthor = book.Author,
+        Action = "AddMyLibrary",
+        ActionDate = DateTime.Now
+    };
+
+    var response = _userBookService.Save(userBookModel, _userBookIndexName);
+    if (!response.IsValid)
     {
-        var userBookModel = new UserBookModel(){
-            Id = Guid.NewGuid(),
-            UserName = User.Identity.Name,
-            BookTitle = book.Title,
-            BookCategory = book.Genre,
-            BookSubCategory = book.SubGenre,
-            BookAuthor = book.Author,
-            Action = "AddMyLibrary",
-            ActionDate = DateTime.Now
-        };
-
-        var response = _userBookService.Save(userBookModel, _userBookIndexName);
-        if (!response.IsValid)
-        {
-            result.IsSuccess = false;
-            result.Message = response.OriginalException.Message;
-        }
-        else
-        {
-            result.IsSuccess = true;
-            result.Message = "Added Your Library";
-        }
+        result.IsSuccess = false;
+        result.Message = response.OriginalException.Message;
+    }
+    else
+    {
+        result.IsSuccess = true;
+        result.Message = "Added Your Library";
     }
 
     return Json(result);
