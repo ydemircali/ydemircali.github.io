@@ -17,7 +17,7 @@ yedi ölümcül günahı kullanan bir seri katili avlıyorlar. Kaynak : [IMDB](h
 Ama yaaniii filmde bir yağmur yağıyor bir yağmur yağıyor içim gitti. 
 Prodüksiyon işi mi değil mi araştırmadım ama filmin her sahnesinde nerdeyse vardı ve kuraklık zamanında güzel oldu yani :)
 
-![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/se7en.PNG?raw=true)
+![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/elasticsearch-logo.jpg?raw=true)
 
 Filmde dedektifler seri katili araştırırken, katilin her cinayette bir kelime bıraktığını görüyor ve birkaç kelimeden sonra emektar ve tecrübeli dedektif Morgan abimiz bunların yedi ölümcül günahlara işaret ettiğini anlıyor. 
 Ardından kütüphaneye gidip bu ölümcül günahlardan bahseden kitapları tek tek çıkarıyor ve anlamaya çalışıyor. İşte en çok hoşuma giden sahne geliyor... :)
