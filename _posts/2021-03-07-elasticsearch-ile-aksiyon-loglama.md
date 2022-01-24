@@ -1,5 +1,5 @@
 ---
-title: Se7en Filminden ElasticSearch ile loglamaya
+title: ElasticSearch ile aksyion loglama
 tags: [HowTo, ElasticSearch, Log, ASP.NET Core MVC, ASP.NET Core 5]
 style:
 color: success
