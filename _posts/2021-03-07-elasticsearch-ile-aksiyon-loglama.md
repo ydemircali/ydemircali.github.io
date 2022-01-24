@@ -9,26 +9,6 @@ description: .Net Core MVC, ElasticSearh, Docker kullanarak kitaplık senaryosu 
 
 Herkese selamlar,
 
-Birkaç hafta önce yağışlar kesilmiş, kuraklık iyice hissetirilmişti. Yine iklim uzmanları haber programlarına çıkmış, küresel ısınmadan tutun yer altı barajlarına, 
-binalarda yağmur suyu depolamaya kadar birçok konuyu tekrar gündeme getiriyorlardı. Pandemiden dolayı haftasonu sokağa çıkma yasakları olduğu için bazen açıp film izliyorduk. 
-Yine hangi filmi izleyelim diye araştırırken, her zaman karşıma çıkan ama bir türlü izlemediğim Se7en filmini izleyelim dedik. 
-1995 yapımı başrollerinde Morgan Freeman, Brad Pitt, Kevin Spacey olan filmin konusu, bir çaylak ve bir emektar olmak üzere iki dedektif, 
-yedi ölümcül günahı kullanan bir seri katili avlıyorlar. Kaynak : [IMDB](https://www.imdb.com/title/tt0114369/).<br> 
-Ama yaaniii filmde bir yağmur yağıyor bir yağmur yağıyor içim gitti. 
-Prodüksiyon işi mi değil mi araştırmadım ama filmin her sahnesinde nerdeyse vardı ve kuraklık zamanında güzel oldu yani :)
-
-![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/elasticsearch-logo.jpg?raw=true)
-
-Filmde dedektifler seri katili araştırırken, katilin her cinayette bir kelime bıraktığını görüyor ve birkaç kelimeden sonra emektar ve tecrübeli dedektif Morgan abimiz bunların yedi ölümcül günahlara işaret ettiğini anlıyor. 
-Ardından kütüphaneye gidip bu ölümcül günahlardan bahseden kitapları tek tek çıkarıyor ve anlamaya çalışıyor. İşte en çok hoşuma giden sahne geliyor... :)
-Morgan abi daha önce iş yaptığı FBI'dan adamıyla iletişime geçiyor. Sonra adam gelip bir paket bırakıp gidiyor. Genç dedektif Brad abi ne oluyor diye sorunca, Morgan abi işte o cümleyi kuruyor... :)
-"Kütüphaneye gelen kişilerin hangi kitabı okumak için ödünç aldığı vs. tutuluyor ve bu bilgiler FBI'ın bilgisayarlarında saklanıyor."
-Aldıkları bu istihbarat ile yedi ölümcül günah ile ilişkilendirdiği o kitapları okuyan kişilerin peşine düşüyorlar vs. film öylece devam ediyor. Güzel film tavsiye edilir, sonunu güzel bağlamışlar.
-
-Bu film hikayesinde anlatılan FBI sahnesini bir yazılımcı olarak düşününce, aklıma loglama mekanizması geldi. Günümüzde hareket-aksiyon logları çok kıymetli. Data Mining yani veri madenciliği konusunda çok yardımcı oluyor.
-Mesela, bunu google çok yapıyor, ziyaret ettiğiniz sitelerin bilgisini alıyor daha sonra ilişkili reklamları önünüze sunuyor. Ya da kurumsal bir uygulamada ekran logları tutulup, bu loglar işlenerek ekranlar ve kullanıcılar hakkında yorumlar yapılıyor, kararlar alınıyor.
-Kullanılmayan ekranlar veya en çok kullanılan ekranlar vs vs...
-
 Loglama denince modern teknolojilere bakınca akla ilk gelen ELK stack oluyor. E- ElasticSearch, L- Logstash, K-Kibana. Burada ElasticSearch bir NoSQL veritabanı, arama ve analiz motoru olarak görev alıyor. Logstash, aynı anda birden fazla kaynaktan veri alan, dönüştüren ve daha sonra Elasticsearch gibi bir stash-database'e gönderen, bir 
 server‑side data processing pipeline olarak görev alıyor. Kibana ise Elasticsearch'te tutulan verileri çizelge ve grafiklerle görselleştirerek kullanıcaya sunmada görev alıyor. Detaylı bilgi [ELK Stack](https://www.elastic.co/what-is/elk-stack).
 
