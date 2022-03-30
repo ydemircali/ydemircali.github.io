@@ -20,7 +20,7 @@ Bu arayış aslında mükemmelliğe doğru bir arayıştır. Her zaman yaptığ�
   
   RabbitMQ ile ilgili olarak çok fazla kaynak ve detaylı yazılar bulabilirsiniz. Adem Olguner tarafından kaleme alınan [şu yazıyı](https://medium.com/@ademolguner/rabbitmq-nedir-nas%C4%B1l-kurulur-nas%C4%B1l-konfig%C3%BCre-edilir-ea596a7c1c08) inceleyip RabbitMQ hakkında bilgi sahibi olup, kurulumlarını yapabilirsiniz.
   
-  .Net projemizin genel structure aşağıdaki gibi olacak. Micro servislere ayırıyoruz, RabbitMQ işlemlerini yapan micro servisimiz de bir web api olacak. 
+  .Net projemizin genel structure aşağıdaki gibi olacak. Bir client bir de bu clienttan gelen isteklere cevap veren api diye ikiye ayırıyoruz. Bu web api RabbitMQ işlemlerini yapacak. 
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_project_structure.PNG?raw=true)
   
@@ -94,11 +94,11 @@ public class RabbitMQService
   
   ![](https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_queue.PNG?raw=true)
   
-  Bu çalışma ile asenkron bir ihtiyacımızı ,mesaj(process) kuyruğu sistemi olan RabbitMQ ile nasıl karşılayabiliriz sorusunun cevabının büyük kısmını incelemiş olduk. 
+  Bu çalışma ile asenkron bir ihtiyacımızı ,mesaj(process) kuyruğu sistemi olan RabbitMQ ile nasıl karşılayabiliriz sorusunun cevabının bir kısmını incelemiş olduk. 
   RabbitMQ kurgusunun üç bileşeni bulunuyor. Biz mesajları(process) ileten Publisher yapısını ve bu iletileri alıp kuyruğa ekleyen yapıyı incelemiş olduk. 
   Üçüncü bileşen ise Consumer bileşeni yani kuyruktaki iletileri dinleyen veya bunları tüketen bileşen.
   
-  Consumer yapısını bir sonraki yazıda EF Core kullanıp DB ye kaydeden bir yapı şeklinde devam etmek istiyorum.
+  Consumer yapısını bir sonraki yazıda Node.js kullanıp MongoDB ye kaydeden bir yapı şeklinde devam etmek istiyorum.
   
   Görüşmek dileğiyle, sağlıcakla kalın.
 
