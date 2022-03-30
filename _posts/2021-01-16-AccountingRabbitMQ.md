@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ, .Net Core, Web Api, Microservice ile asenkron işlemler.
+title: RabbitMQ, .Net Core ile asenkron işlemler.
 tags: [HowTo, Notes, RabbitMQ, .Net Core]
 style:
 color: success
