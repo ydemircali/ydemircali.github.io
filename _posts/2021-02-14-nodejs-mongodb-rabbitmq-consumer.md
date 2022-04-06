@@ -5,6 +5,7 @@ style:
 color: success
 comments: true
 description: Nodejs ve MongoDB ile RabbitMQ consumer işlemi
+image: https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_microservice.PNG
 ---
 
 Merhaba,
