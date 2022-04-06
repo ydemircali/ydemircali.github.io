@@ -29,7 +29,7 @@
   <a href="{{ post_url }}" class="post card {{ card_style }}">
     <div class="card-body {{ text_style }}">
       {%- if post.image -%}
-        <p class="card-img-top"><img src="{{ post.image }}?raw=true" alt=""> </p>
+        <p class="card-img-top"><img style="width: 100%;height: 100%;" src="{{ post.image }}?raw=true" alt=""> </p>
       {%- endif -%}
       
       <h3 class="card-title">{{ post.title }}</h3>
