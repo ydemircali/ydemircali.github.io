@@ -5,6 +5,7 @@ style:
 color: success
 comments: true
 description: .Net Core MVC, ElasticSearh, Docker kullanarak kitaplık senaryosu ile kullanıcı hareketleri nasıl izlenir ?
+image: https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/kibana_console_add.PNG
 ---
 
 Herkese selamlar,
