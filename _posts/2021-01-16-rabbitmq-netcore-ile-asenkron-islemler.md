@@ -5,6 +5,7 @@ style:
 color: success
 comments: true
 description: RabbitMQ, .Net Core, Web Api, Microservice ile Basit Muhasebe işlemleri
+image: https://github.com/ydemircali/ydemircali.github.io/blob/main/_posts/images/accounting_demo.gif
 ---
 
 Merhaba,
